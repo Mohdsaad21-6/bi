@@ -22,7 +22,10 @@ app.use(cookieParser());
 //   credentials: true,
 // }))
 
-app.use(cors())
+app.use(cors({
+  origin: ['http://localhost:5173', "https://bi-364i.onrender.com"],
+  credentials: true
+}));
 
 
 app.use("/",authRouter)
