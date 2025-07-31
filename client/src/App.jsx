@@ -6,7 +6,7 @@ import URLsView from "./pages/URLsView";
 import Login from "./components/login";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
-import Profile from "./components/profile";
+import Profile from "./components/Profile";
 function App() {
   return (
     <Provider store={appStore}>
