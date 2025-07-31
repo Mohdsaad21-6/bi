@@ -6,6 +6,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { BASE_URL } from "../BASE_URL.JSX";
 
 const DashboardLayout = () => {
   const user = useSelector((store) => store.user);
@@ -15,7 +16,7 @@ const DashboardLayout = () => {
 
   const fetchUser = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/profile", {
+      const response = await axios.get(BASE_URL+"/profile", {
         withCredentials: true,
       });
       dispatch(addUser(response.data.user));

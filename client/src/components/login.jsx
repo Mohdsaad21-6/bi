@@ -13,6 +13,7 @@ import {
   Button,
   Divider,
 } from "@mui/material";
+import { BASE_URL } from "../BASE_URL.JSX";
 
 const Login = () => {
   const [firstName, setFirstName] = useState("");
@@ -28,7 +29,7 @@ const Login = () => {
   const handleOnSubmit = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/login", // Replace with your actual backend URL
+        BASE_URL+"/login", // Replace with your actual backend URL
         { emailId, password },
         { withCredentials: true }
       );

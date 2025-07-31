@@ -3,12 +3,13 @@
 import { useEffect, useState } from "react";
 import StatCard from "../components/StatCard";
 import axios from "axios";
+import { BASE_URL } from "../BASE_URL.JSX";
 
 const MarketView = () => {
   const [marketData, setMarketData] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/marketdata").then((res) => {
+    axios.get(BASE_URL+"/marketdata").then((res) => {
       setMarketData(res.data);
     });
   }, []);

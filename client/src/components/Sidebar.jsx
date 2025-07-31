@@ -4,6 +4,7 @@ import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { removeUser } from "../utils/userSlice";
+import { BASE_URL } from "../BASE_URL.JSX";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
@@ -21,7 +22,7 @@ const Sidebar = () => {
   const handleLogout = async () => {
     try {
       await axios.post(
-        "http://localhost:3000/logout",
+        BASE_URL+"/logout",
         {},
         {
           withCredentials: true,
