@@ -44,7 +44,8 @@ const Login = () => {
   const handleSignUp = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/signup",
+        // "http://localhost:3000/signup",
+        BASE_URL+"/signup", // Replace with your actual backend URL
         { firstName, lastName, emailId, password },
         { withCredentials: true }
       );
